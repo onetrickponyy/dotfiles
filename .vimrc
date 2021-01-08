@@ -9,16 +9,17 @@
 let mapleader = "\<space>"
 " => vim-plug plugins {{{1
 call plug#begin()
-  Plug 'easymotion/vim-easymotion'            " Quick and precise navigation.
-  Plug 'preservim/nerdtree'                   " NERDTree.
-  Plug 'tpope/vim-unimpaired'                 " Buffer changes.
-  Plug 'ctrlpvim/ctrlp.vim'                   " Quick file match.
-  Plug 'tpope/vim-fugitive'                   " Git inside Vim.
-  Plug 'christoomey/vim-tmux-navigator'       " Navigate wihtout conflicts.
-  Plug 'vim-test/vim-test'                    " Builds and test.
-  Plug 'dense-analysis/ale'                   " Asynchronous Lint Engine.
-  Plug 'NLKNguyen/papercolor-theme'           " Colorscheme.
-  Plug 'vim-airline/vim-airline'              " Status line.
+  Plug 'easymotion/vim-easymotion'                                        " Quick and precise navigation.
+  Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }                   " NERDTree.
+  Plug 'tpope/vim-unimpaired'                                             " Buffer changes.
+  Plug 'ctrlpvim/ctrlp.vim'                                               " Quick file match.
+  Plug 'tpope/vim-fugitive'                                               " Git inside Vim.
+  Plug 'christoomey/vim-tmux-navigator'                                   " Navigate wihtout conflicts.
+  Plug 'vim-test/vim-test'                                                " Builds and test.
+  Plug 'dense-analysis/ale'                                               " Asynchronous Lint Engine.
+  Plug 'NLKNguyen/papercolor-theme'                                       " Colorscheme.
+  Plug 'vim-airline/vim-airline'                                          " Status line.
+  Plug 'neoclide/coc.nvim'                                                " Autocompleter.
 call plug#end()
 " => Design {{{1
 colorscheme PaperColor	                                    " Changing a colorscheme.
@@ -41,6 +42,12 @@ set foldmethod=marker                           " Fold based on indentation.
 set wildmenu                                    " :e with wildmenu enabled.
 set wildmode=list:longest,full                  " Complete till longest string in list.
 set tags=tags;                                  " Look for a tags file recursively in parent directories.
+set clipboard=unnamed,unnamedplus               " Copy into system's (*, +) register.
+" => Mapped keys {{{1
+" Toggling NERDTree.
+noremap <leader>n :NERDTreeToggle<cr>           
+" Use |;| in addition to |:| to type commands.
+noremap ; :
 " => Plugin configuration {{{1
 " Download and install vim-plug (cross platform), if not already installed.
 if empty(glob(
@@ -52,10 +59,7 @@ if empty(glob(
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-noremap <leader>n :NERDTreeToggle<cr>                       
-
 let NEDTreeShowBookmarks = 1                        " Display bookmarks on the startup.
 " autocmd VimEnter * NERDTree                       " Enable NERDTree on startup.
 " Autoclose NERDTree if it's the only windows left.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endi
