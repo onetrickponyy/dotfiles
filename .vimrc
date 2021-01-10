@@ -19,12 +19,14 @@ call plug#begin()
   Plug 'dense-analysis/ale'                                               " Asynchronous Lint Engine.
   Plug 'NLKNguyen/papercolor-theme'                                       " Colorscheme.
   Plug 'vim-airline/vim-airline'                                          " Status line.
+  Plug 'vim-airline/vim-airline-themes'                                   " Themes for vim-airline status line.
   Plug 'neoclide/coc.nvim'                                                " Autocompleter.
   Plug 'flazz/vim-colorschemes'                                           " A pack of colorschemes to select favorite.
 call plug#end()
 " => Design {{{1
-colorscheme PaperColor	                                    " Changing a colorscheme.
-set background=light                                        " Changing the background.
+colorscheme Black     	                                    " Changing a colorscheme.
+set background=dark                                         " Changing the background.
+let g:airline_theme='desertink'                             " Changing vim-airline theme.
 " => Settings {{{1 
 syntax on 					                            " Enable syntax highlighting.
 filetype plugin indent on	                      " Enable file type based indentation.
