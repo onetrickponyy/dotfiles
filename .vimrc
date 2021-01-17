@@ -19,8 +19,9 @@ call plug#begin()
   Plug 'NLKNguyen/papercolor-theme'                                       " Colorscheme.
   Plug 'vim-airline/vim-airline'                                          " Status line.
   Plug 'vim-airline/vim-airline-themes'                                   " Themes for vim-airline status line.
-  Plug 'neoclide/coc.nvim'                                                " Autocompleter.
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}                         " Autocompleter.
   Plug 'flazz/vim-colorschemes'                                           " A pack of colorschemes to select favorite.
+  Plug 'pangloss/vim-javascript'                                          " Syntax highlighting and improved indentation for JavaScript.
 call plug#end()
 " => Design {{{1
 colorscheme Black     	                                    " Changing a colorscheme.
