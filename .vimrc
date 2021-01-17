@@ -1,5 +1,4 @@
 " URL: https://github.com/onetrickponyy/dotfiles
-" Author: Rust 
 " Description: Personal .vimrc file
 "
 " All the plugins managed via vim-plug, run :PlugInstall to install all
