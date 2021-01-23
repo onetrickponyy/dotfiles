@@ -22,6 +22,7 @@ call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}                         " Autocompleter.
   Plug 'flazz/vim-colorschemes'                                           " A pack of colorschemes to select favorite.
   Plug 'pangloss/vim-javascript'                                          " Syntax highlighting and improved indentation for JavaScript.
+  Plug 'jceb/vim-orgmode'                                                 " Org-mode from emacs.
 call plug#end()
 " => Design {{{1
 colorscheme Black     	                                    " Changing a colorscheme.
